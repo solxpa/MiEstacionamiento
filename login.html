@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="login.css" />
+    <title>Formulario de inicio de sesión - Estacionamiento</title>
+</head>
+
+<body>
+    <div class="header-banner">
+        <a href="Index.html" class="olpast" style="float: left;">
+            <i class="fas fa-arrow-left"></i>
+            Volver
+        </a>
+        <h1 style="display: inline;"> <img src="img/car_25px.png" alt="logo mi estacionamiento"> LOGIN MIESTACIONAMIENTO <img src="img/car_25px.png" alt="logo mi estacionamiento"></i></h1>
+    </div>
+
+    <div class="container form-container">
+        <div class="text-center">
+            <i class="fas fa-user user-icon"></i>
+            <h3>LOGIN</h3>
+        </div>
+        <form method="post" action="login.php">
+            <input type="hidden" id="tipo-usuario" name="tipo-usuario" value="cliente">
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico"
+                        required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña"
+                        required>
+                </div>
+            </div>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="leftClick()">Cliente</button>
+                <button type="button" class="toggle-btn" onclick="rightClick()">Arrendatario</button>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="#" class="olpast">¿Olvidaste tu contraseña?</a>
+            <a href="registro.html" class="olpast">¿No tienes cuenta MiEstacionamiento? Registrate aqu&iacute;</a>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/b0ebb4a09c.js" crossorigin="anonymous"></script>
+    <script>
+
+        var tipoUsuario = document.getElementById('tipo-usuario');
+
+        function leftClick() {
+            btn.style.left = '0';
+            tipoUsuario.value = 'cliente';
+
+        }
+
+        function rightClick() {
+            btn.style.left = '50%';
+            tipoUsuario.value = 'arrendatario';
+
+        }
+    </script>
+
+</body>
+
+</html>
